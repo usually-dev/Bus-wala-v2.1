@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-desi: 'Yatra One', cursive;
+    --font-vintage: 'Rozha One', serif;
+    --font-bodyHindi: 'Tiro Devanagari Hindi', 'Rozha One', serif;
+    --font-ticket: 'Courier Prime', 'Special Elite', monospace;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #060d1a;
+    font-family: 'Courier Prime', 'Tiro Devanagari Hindi', monospace, serif;
+    letter-spacing: 0.015em;
+  }
+
+  /* Retrograde vintage font inheritance for all controls */
+  button, input, select, textarea, label {
+    font-family: inherit;
+  }
+}
+
+.font-desi { font-family: 'Yatra One', cursive; }
+.font-vintage { font-family: 'Rozha One', serif; }
+.font-bodyHindi { font-family: 'Tiro Devanagari Hindi', 'Rozha One', serif; }
+.font-ticket { font-family: 'Courier Prime', 'Special Elite', monospace; }
+
+.film-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.7'/%3E%3C/svg%3E");
+}
+
+/* Glassmorphism Consistency: Frosted dark-glass with subtle golden glow */
+.glass-gold-pill {
+  background: rgba(10, 16, 30, 0.72);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65), 0 0 14px rgba(245, 158, 11, 0.12);
+}
+
+.glass-gold-player {
+  background: linear-gradient(135deg, rgba(12, 20, 38, 0.45) 0%, rgba(6, 12, 24, 0.55) 100%);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(245, 158, 11, 0.24);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.14), 0 0 16px rgba(245, 158, 11, 0.08);
+}
+
+.glass-gold-drawer {
+  background: rgba(8, 14, 26, 0.96);
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  border-top: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 -16px 50px rgba(0, 0, 0, 0.92), 0 -4px 20px rgba(245, 158, 11, 0.1);
+}
+
+@keyframes discSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.disc-spinning {
+  animation: discSpin 10s linear infinite;
+}
+.disc-paused {
+  animation-play-state: paused;
+}
+
+@keyframes hornVibe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08) rotate(-1deg); }
+}
+.horn-ringing {
+  animation: hornVibe 0.14s infinite alternate;
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.95) !important;
+}
+
+.ticket-dashed-cut {
+  border-top: 2px dashed #78350f;
+  position: relative;
+}
+.ticket-dashed-cut::before, .ticket-dashed-cut::after {
+  content: '';
+  position: absolute;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  background: #060d1a;
+  border-radius: 50%;
+}
+.ticket-dashed-cut::before { left: -22px; }
+.ticket-dashed-cut::after { right: -22px; }
+
+@keyframes ticketDispense {
+  0% { transform: translateY(-70px) scale(0.9) rotate(-3deg); opacity: 0; }
+  60% { transform: translateY(10px) scale(1.02) rotate(1deg); opacity: 1; }
+  100% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+}
+.ticket-reveal-anim {
+  animation: ticketDispense 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.scrubber-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+.scrubber-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fcd34d;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.9);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.scrubber-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.35);
+}
+.scrubber-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 50%;
+  background: #fcd34d;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.9);
+  cursor: pointer;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
+}
+
+@keyframes hornShake {
+  0% { transform: scale(1) rotate(0deg); }
+  15% { transform: scale(1.22) rotate(-14deg); }
+  30% { transform: scale(1.25) rotate(12deg); }
+  45% { transform: scale(1.20) rotate(-10deg); }
+  60% { transform: scale(1.15) rotate(8deg); }
+  75% { transform: scale(1.08) rotate(-4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes hornRingPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.85);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+    box-shadow: 0 0 16px 10px rgba(245, 158, 11, 0);
+  }
+}
+
+.horn-honking {
+  animation: hornShake 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+
+.horn-glow-ring {
+  animation: hornRingPulse 0.75s ease-out infinite;
+}
+
+/* Authentic physical ticket stamp slam animation */
+@keyframes stampSlam {
+  0% {
+    transform: scale(2.8) rotate(-35deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  50% {
+    transform: scale(0.92) rotate(-14deg);
+    opacity: 0.95;
+    filter: blur(0px);
+  }
+  75% {
+    transform: scale(1.08) rotate(-10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-12deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ticketPaperImpact {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  30% {
+    transform: scale(0.985) translateY(4px);
+  }
+  65% {
+    transform: scale(1.015) translateY(-2px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes inkRingBurst {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+.stamp-slam-anim {
+  animation: stampSlam 0.42s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+.ticket-impact-anim {
+  animation: ticketPaperImpact 0.38s ease-out forwards;
+}
+
+.ink-ring-burst {
+  animation: inkRingBurst 0.5s ease-out forwards;
+}
+

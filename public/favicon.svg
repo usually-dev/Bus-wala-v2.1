@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060d1a" />
+      <stop offset="100%" stop-color="#0a192f" />
+    </linearGradient>
+    <linearGradient id="busBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="busBottom" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#991b1b" />
+      <stop offset="100%" stop-color="#7f1d1d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark circular badge background with subtle amber border -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGrad)" stroke="#f59e0b" stroke-width="2" />
+
+  <!-- Road Horizon line -->
+  <line x1="6" y1="46" x2="58" y2="46" stroke="#475569" stroke-width="2" stroke-linecap="round" />
+  <line x1="20" y1="46" x2="28" y2="46" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" />
+  <line x1="36" y1="46" x2="44" y2="46" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Bus Luggage Rack -->
+  <rect x="15" y="16" width="34" height="3" rx="1.5" fill="#e2e8f0" />
+  <rect x="18" y="14" width="12" height="3" rx="1" fill="#0284c7" />
+  <rect x="32" y="13" width="14" height="4" rx="1" fill="#15803d" />
+
+  <!-- Bus Upper Body (Retro Yellow / Amber) -->
+  <rect x="10" y="19" width="44" height="17" rx="3" fill="url(#busBody)" />
+
+  <!-- Bus Lower Body (Roadways Maroon) -->
+  <path d="M 10 36 L 54 36 L 54 41 C 54 42.5 52.5 43.5 51 43.5 L 13 43.5 C 11.5 43.5 10 42.5 10 41 Z" fill="url(#busBottom)" />
+
+  <!-- Bus Windows -->
+  <rect x="13" y="22" width="6" height="8" rx="1" fill="#0f172a" />
+  <rect x="21" y="22" width="6" height="8" rx="1" fill="#0f172a" />
+  <rect x="29" y="22" width="6" height="8" rx="1" fill="#0f172a" />
+  <rect x="37" y="22" width="6" height="8" rx="1" fill="#0f172a" />
+  <!-- Windshield with front driver curve -->
+  <path d="M 45 22 L 52 22 C 53 22 53.5 23 53 24 L 51 30 L 45 30 Z" fill="#38bdf8" opacity="0.9" />
+
+  <!-- Headlight beam glow -->
+  <circle cx="53" cy="38" r="2.5" fill="#fef08a" />
+  <path d="M 54 37 L 62 34 L 62 42 L 54 39 Z" fill="#fef08a" opacity="0.35" />
+
+  <!-- Bus Wheels -->
+  <circle cx="19" cy="43.5" r="4.5" fill="#0f172a" stroke="#64748b" stroke-width="1.5" />
+  <circle cx="19" cy="43.5" r="1.5" fill="#cbd5e1" />
+
+  <circle cx="45" cy="43.5" r="4.5" fill="#0f172a" stroke="#64748b" stroke-width="1.5" />
+  <circle cx="45" cy="43.5" r="1.5" fill="#cbd5e1" />
+</svg>

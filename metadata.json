@@ -1,0 +1,8 @@
+{
+  "name": "Bus wala",
+  "description": "Seamless travel feel with songs bus wala safarnama express",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

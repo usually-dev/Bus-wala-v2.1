@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "बस वाला • Bus Wala Highway Radio & Safarnama",
+  "short_name": "बस वाला",
+  "description": "Retro Indian highway radio and Safarnama Express bus journey player with nostalgic Bollywood songs, interactive ticket counter, and highway vibes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060d1a",
+  "theme_color": "#060d1a",
+  "categories": ["music", "entertainment", "travel"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
